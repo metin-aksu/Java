@@ -1,7 +1,9 @@
 
 public class SwapCase {
 
-    public static String swapCase(String str) {
+    //== METHOD 1 
+
+    public static String SwapCase1(String str) {
       String str2 = "",letter="";
       int code;
   
@@ -19,9 +21,23 @@ public class SwapCase {
       
       return str2;
     }
+
+    // METHOD 2
+
+    public static String SwapCase2(String str) {
+      String letter, lower, newstr="";
+      char[] arrStr = str.toCharArray();
+
+      for(char c:arrStr) {
+          letter = String.valueOf(c);
+          lower = letter.toLowerCase();
+          newstr += letter == lower ? letter.toUpperCase() : lower;
+      }
+      return newstr;
+    }
   
     public static void main(String[] args) {  
-      System.out.println(swapCase("Hello World!"));
+      System.out.println(SwapCase2("Hello World!"));
     } 
   
   }
