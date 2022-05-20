@@ -27,7 +27,7 @@ public class SwapCase {
       return str2;
     }
 
-    // METHOD 2
+    //== METHOD 2
 
     public static String SwapCase2(String str) {
       String letter, lower, newstr="";

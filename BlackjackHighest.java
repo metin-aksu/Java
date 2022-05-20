@@ -23,6 +23,7 @@ import java.io.*;
 class BlackjackHighest {
 
   public static String blackjackHighest(String[] strArr) {
+    String[] cardName = {"zero","one","two","three","four","five","six","seven","eigth","nine","ten","jack","queen","king","ace"};
     int[][] cards = new int[strArr.length][3]; 
 
     for (int i = 0; i < strArr.length; i++) {
@@ -31,7 +32,7 @@ class BlackjackHighest {
       cards[i][2] = CardValue(strArr[i],2);
     }
     Arrays.sort(cards, (a, b) -> a[2] - b[2]);
-    String maxCard = getCardName(cards[strArr.length-1][2]);
+    String maxCard = cardName[cards[strArr.length-1][2]];
         
     int total = 0, minVal,maxVal;
     boolean useMin;
@@ -50,7 +51,7 @@ class BlackjackHighest {
       }
             
       if (useMin == true && (cards[i][0] != cards[i][1]))
-        maxCard = getCardName(cards[strArr.length-2][2]);            
+        maxCard = cardName[cards[strArr.length-2][2]];            
     } // for end        
         
     if (total == 21)
@@ -65,51 +66,37 @@ class BlackjackHighest {
   // ===============================================================
   static int CardValue(String name, int index){
     name = name.toLowerCase();
-    if (name == "two") return 2; 
-    if (name == "three") return 3;  
-    if (name == "four") return 4;  
-    if (name == "five") return 5;  
-    if (name == "six") return 6;  
-    if (name == "seven") return 7;  
-    if (name == "eight") return 8;  
-    if (name == "nine") return 9;  
-    if (name == "ten") return 10;
+    switch (name){
+      case "two" : return 2; 
+      case "three" : return 3;  
+      case "four" : return 4; 
+      case "five" : return 5; 
+      case "six" : return 6;  
+      case "seven" : return 7; 
+      case "eight" : return 8; 
+      case "nine" : return 9; 
+      case "ten" : return 10;
+      case "ace" :
+        if (index == 0) return 1; 
+        if (index == 1) return 11; 
+        if (index == 2) return 14;
+              
+      default : //case "jack" : case "queen" : case "king" :
+        if (index == 0 || index == 1) return 10;
 
-    if (name == "ace"){
-      if (index == 0) return 1; 
-      if (index == 1) return 11; 
-      if (index == 2) return 14;
-    }
-    if (index == 0 || index == 1) return 10;
-
-    if (index == 2){
-      if (name == "jack") return 11;
-      if (name == "queen") return 12;
-      if (name == "king") return 13;
-    }
+        if (index == 2){
+          if (name == "jack") return 11;
+          if (name == "queen") return 12;
+          if (name == "king") return 13;
+        }
+    }  
     return 0; 
-  }
-  // ===============================================================    
-  static String getCardName(int val) {
-    	if (val == 2) return "two";
-    	if (val == 3) return "three";
-    	if (val == 4) return "four";
-    	if (val == 5) return "five";
-    	if (val == 6) return "six";
-    	if (val == 7) return "seven";
-    	if (val == 8) return "eight";
-    	if (val == 9) return "nine";
-    	if (val == 10) return "ten";
-    	if (val == 11) return "jack";
-    	if (val == 12) return "queen";
-    	if (val == 13) return "king";
-    	if (val == 14) return "ace";    	
-    	return "empty";    	
   }
   // ===============================================================
   public static void main (String[] args) {   
-    Scanner s = new Scanner(System.in);
-    System.out.print(blackjackHighest(s.nextLine())); 
+    //Scanner s = new Scanner(System.in);
+    //System.out.print(blackjackHighest(s.nextLine())); 
+    System.out.print(blackjackHighest(new String[]{"ace","queen","ten","king"})); 
   }
 }
     
