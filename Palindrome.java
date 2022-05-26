@@ -35,8 +35,8 @@ class Palindrome {
   }
 
   public static void main (String[] args) {
-    Scanner str = new Scanner(System.in);
-    System.out.print(StringChallenge(str.nextLine()));
+    Scanner input = new Scanner(System.in);
+    System.out.print(StringChallenge(input.nextLine()));
   }
 
 }
