@@ -7,27 +7,33 @@ Have the function RunLength(str) take the str parameter being passed and return 
 import java.util.*;
 import java.io.*;
 
-class RunLength {
+class RunLength2 {
 
   public static String StringChallenge(String str) {
+    char[] arr = str.toCharArray();
+    int count = 1;
+    String newStr = "";
 
-    String[] arrStr = str.split("");
-    int arrLen = arrStr.length;
-    String letter= arrStr[0], newStr="", item="";
-    int count = 0;
+    for (int i = 0; i < arr.length; i++){
 
-    for (int i = 0; i <= arrLen; i++){
-      if (i < arrLen) item = arrStr[i];
-
-      if (letter.equals(item) && i < arrLen){
-        count++;
+      if ( i + 1 >= arr.length){
+        newStr = newStr + count + arr[i];
       }
-      else {
-        newStr += count + letter;
-        count = 1;
-        letter = item;
+
+      else{
+
+        if (arr[i] == arr[i+1]){
+          count++;
+        }
+        else{
+          newStr = newStr + count + arr[i];
+          count = 1;
+        }
+
       }
+
     }
+
     return newStr;
   }
 
@@ -36,5 +42,3 @@ class RunLength {
     Scanner s = new Scanner(System.in);
     System.out.print(StringChallenge(s.nextLine()));
   }
-
-}

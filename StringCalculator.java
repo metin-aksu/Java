@@ -44,6 +44,13 @@ public class StringCalculator {
             nums[i] = Integer.parseInt(st.nextToken());
             i++;
         }
+
+        // stringin ilk karakteri - ise, nums[0] negatif sayı yapılır.
+
+        if (str2.charAt(0) == '-') {
+            nums[0] = 0 - nums[0];
+        }
+
         // stringden numaralar çıkarılıp işlemler bırakıldı
         for (i = 0; i < nums.length; i++) {
             str = str.replace(String.valueOf(nums[i]),"");
@@ -87,7 +94,8 @@ public class StringCalculator {
         // String str = "45-10*2-1"; // 24
         // String str = "100*2"; // 200
         // String str = "812/2*(5-3)"; // 812
-        String str = "7-4-1+8(3)/2"; // 14
+        // String str = "7-4-1+8(3)/2"; // 14
+        String str = "8-7(12+100/2)*9-2"; // -3900
         System.out.println(Calculator(str));
    }
 }
