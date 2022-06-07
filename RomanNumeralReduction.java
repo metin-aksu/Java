@@ -1,8 +1,8 @@
 /*
 Roman Numeral Reduction
 
-Have the function RomanNumeralReduction(str) read str azalan sısrada bir dizi roman rakami olacaktır. Kullanılan rakamlar: I for 1, V for 5, X for 10, L for 50, C for 100, D for 500 and M for 1000. Your program should return the same number given by str daha kücük bir roman rakamları seti kullanarak. Örneğin: ek str "LLLXXXVVVV" bu 200, bu yüzden programınız geri dönmelidir CC because this is the shortest way to write 200 using the roman numeral system given above. If a string is given in its shortest form, just return that same string.
-Examples
+İşlevi al RomanNumeralReduction (str) okumak str azalan sısrada bir dizi roman rakami olacaktır. Kullanılan rakamlar: I 1 için V 5 için X 10 için L 50 için C 100 için D 500 ve M 1000 için. Programınız verilen numarayı döndürmelidir str daha kücük bir roman rakamları seti kullanarak. Örneğin: ek str "LLLXXXVVVV" bu 200, bu yüzden programınız geri dönmelidir CC çünkü bu, yukarıda verilen roma rakam sistemini kullanarak 200 yazmanın en kısa yoludur. Bir dize en kısa biçiminde verilirse, aynı dizeyi döndürmeniz yeterlidir.
+Örnekler
 Input: "XXXVVIIIIIIIIII"
 Çıktı: L
 Input: "DDLL"
