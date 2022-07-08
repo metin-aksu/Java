@@ -9,17 +9,20 @@ import java.util.Arrays;
  
 public class NextGreater
 {
-    // Utility function to swap two digit
-    static void swap(char ar[], int i, int j)
-    {
+    // İki haneyi değiştirmek için yardımcı fonksiyon
+    static void swap(char ar[], int i, int j) {
         char temp = ar[i];
         ar[i] = ar[j];
         ar[j] = temp;
     }
  
     // Given a number as a char array number[],
+    // Karakter dizisi number[] olarak bir sayı verildiğinde,
+
     // this function finds the next greater number.
+    // bu fonksiyon bir sonraki büyük sayıyı bulur.
     // It modifies the same array to store the result
+    // Sonucu saklamak için aynı diziyi değiştirir
     static void findNext(char ar[], int n)
     {
         int i;

@@ -10,7 +10,7 @@ Input: "(2 2)(4 3)"
 Output: 3
 */
 
-public class ChessboardTraveling {
+public class ChessboardTraveling{
 
     static int chessboardTraveling(String str){
 

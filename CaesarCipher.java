@@ -24,7 +24,6 @@ public class CaesarCipher {
       }
 
     public static void main(String[] args){
-        System.out.println(caesarCipher("Arguments goes here",2));
-
+        System.out.println(caesarCipher("AbCdEfG",2));
     }
 }
